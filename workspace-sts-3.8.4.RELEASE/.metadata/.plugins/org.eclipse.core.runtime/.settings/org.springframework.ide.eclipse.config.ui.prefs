@@ -1,0 +1,5 @@
+//com.springsource.config.ui.prefs.activePageIndex\:/SPA-Assignment-4/src/main/resources/invoices-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/SPA-Assignment-4/src/main/resources/invoices-int-schema.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="5" kind\="graphicalEditor" uri\="http\://www.springframework.org/schema/integration"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/SpringMVC-JDBC/src/main/java/beans.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/si-bookstore/src/main/resources/META-INF/com/prodcod/shop.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="5" kind\="graphicalEditor" uri\="http\://www.springframework.org/schema/integration"/>
+eclipse.preferences.version=1

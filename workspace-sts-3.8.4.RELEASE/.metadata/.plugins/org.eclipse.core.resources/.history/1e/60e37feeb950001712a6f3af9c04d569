@@ -1,0 +1,8 @@
+import org.apache.hadoop.conf.Configuration;
+
+public class ALS {
+	public static void main(String[] args) throws Exception{
+		Configuration conf = new Configuration();
+	}
+
+}

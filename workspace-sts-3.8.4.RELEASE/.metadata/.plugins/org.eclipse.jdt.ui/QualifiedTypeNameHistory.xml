@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.servlet.Filter"/>
+<fullyQualifiedTypeName name="org.springframework.web.filter.CharacterEncodingFilter"/>
+<fullyQualifiedTypeName name="com.kundjanasith.kjzt_JavaSpringDB.database.Book"/>
+<fullyQualifiedTypeName name="com.kundjanasith.kjzt_JavaSpringDB.database.BookJDBCTemplate"/>
+<fullyQualifiedTypeName name="com.kundjanasith.kjzt_JavaSpringDB.controller.BookJDBCTemplate"/>
+<fullyQualifiedTypeName name="com.kundjanasith.kjzt_JavaSpringDB.database.Pattern"/>
+<fullyQualifiedTypeName name="com.kundjanasith.kjzt_JavaSpringDB.database.PatternJDBCTemplate"/>
+</qualifiedTypeNameHistroy>

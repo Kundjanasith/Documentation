@@ -1,0 +1,9 @@
+import java.io.File;
+
+public class readFS{
+	public static void main(String[] args){
+		String filePath = new File("").getAbsolutePath();
+		filePath.concat(""~/input.txt");
+		System.out.println(filePath);
+	}
+}

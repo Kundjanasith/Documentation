@@ -1,0 +1,4 @@
+
+public class StudentMapper implements RowMapper<Student>{
+
+}

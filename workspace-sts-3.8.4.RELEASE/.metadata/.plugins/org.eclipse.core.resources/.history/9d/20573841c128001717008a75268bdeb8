@@ -1,0 +1,46 @@
+import java.util.List;
+
+import javax.sql.DataSource;
+
+public class StudentJDBCTemplate implements StudentDAO{
+	private DataSource dataSource;
+	private JdbcTemplate jdbcTemplateObject;
+
+	@Override
+	public void setDataSource(DataSource ds) {
+		this.dataSource = ds;
+		this.jdbcTemplateObject = new JdbcTemplate(dataSource);	
+	}
+
+	@Override
+	public void create(String name, Integer age) {
+		String sql = "insert into Student (name, age) values (?, ?)";
+		this.jdbcTemplateObject.update( sql, name, age );
+		System.out.println("Created Record Name = "+name+" Age = "+age);
+	}
+
+	@Override
+	public Student getStudent(Integer id) {
+		String sql = "select * from Student where id = ?";
+		Student student = this.jdbcTemplateObject.queryForObject( sql, new Object[]{id}, new StudentMapper());)
+	}
+
+	@Override
+	public List<Student> listStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Integer id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Integer id, Integer age) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

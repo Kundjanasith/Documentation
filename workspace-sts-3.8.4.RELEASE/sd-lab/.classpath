@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="/Users/kjzth/Downloads/org-apache-commons-logging.jar"/>
+	<classpathentry kind="lib" path="/Users/kjzth/Downloads/hadoop-client-2.6.0.jar"/>
+	<classpathentry kind="lib" path="/Users/kjzth/Downloads/hadoop-hdfs-2.6.5.jar"/>
+	<classpathentry kind="lib" path="/Users/kjzth/Downloads/com.google.guava_1.6.0.jar"/>
+	<classpathentry kind="lib" path="/Users/kjzth/Downloads/org.apache.commons.collections.jar"/>
+	<classpathentry kind="lib" path="/Users/kjzth/Downloads/commons-configuration-1.9.jar"/>
+	<classpathentry kind="lib" path="/Users/kjzth/Downloads/apache-commons-lang.jar"/>
+	<classpathentry kind="lib" path="/Users/kjzth/Downloads/hadoop-common-0.23.3.jar"/>
+	<classpathentry kind="lib" path="/Users/kjzth/Downloads/hadoop-auth-2.6.0.jar"/>
+	<classpathentry kind="lib" path="/Users/kjzth/Downloads/slf4j.jar"/>
+	<classpathentry kind="lib" path="/Users/kjzth/Downloads/logback-classic.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
