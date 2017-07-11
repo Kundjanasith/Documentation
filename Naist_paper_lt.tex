@@ -97,19 +97,19 @@ Performance analysis Part has 3 sections: Recording time information using time 
 \indent Let \textbf{\textit{t}} be the execution time (seconds)\\
 \indent Let \textbf{\textit{c}} be the number of CPU core per worker node (cores)\\
 \indent Let \textbf{\textit{d}} be the size of data set (MB)\\
-\indent The Multiple linear regression (MLR) model that describes a dependent variable  \textbf{\textit{t}} by independent variables \textbf{\textit{c}} and  \textbf{\textit{d}} is expressed by the equation as follow where the number \begin{math}\alpha\end{math} and \begin{math}\beta\end{math} are the parameters, and \begin{math}\phi\end{math} is the error term (1).
+\indent The Multiple linear regression (MLR) model that describes a dependent variable  \textbf{\textit{t}} by independent variables \textbf{\textit{c}} and  \textbf{\textit{d}} is expressed by the equation as follow where the number \begin{math}\alpha\end{math} and \begin{math}\beta\end{math} are the parameters (1).
 
 \indent For the number of worker nodes effect analysis to observer parallel I/O. There are 2 dependent variables on time variable: the number of worker nodes and the size of dataset.\\
 \indent Let \textbf{\textit{t}} be the execution time (seconds)\\
 \indent Let \textbf{\textit{n}} be the number of worker node (nodes)\\
 \indent Let \textbf{\textit{d}} be the size of data set (MB)\\
-\indent The Multiple linear regression (MLR) model that describes a dependent variable  \textbf{\textit{t}} by independent variables \textbf{\textit{n}} and  \textbf{\textit{d}} is expressed by the equation as follow where the number \begin{math}\alpha\end{math} and \begin{math}\beta\end{math} are the parameters, and \begin{math}\phi\end{math} is the error term (2).
+\indent The Multiple linear regression (MLR) model that describes a dependent variable  \textbf{\textit{t}} by independent variables \textbf{\textit{n}} and  \textbf{\textit{d}} is expressed by the equation as follow where the number \begin{math}\alpha\end{math} and \begin{math}\beta\end{math} are the parameters (2).
 
 \begin{equation}
-	t = \alpha + \beta_{1}c + \beta_{2}d + \phi
+	t = \alpha_{1} + \beta_{1}c + \beta_{2}d
 \end{equation}
 \begin{equation}
-	t = \alpha + \beta_{1}n + \beta_{2}d + \phi
+	t = \alpha_{2} + \beta_{3}n + \beta_{4}d 
 \end{equation}
 
 \section{Experiment result}
@@ -160,9 +160,9 @@ After we give a trial for execute the different size of data sets with the same 
 \addlegendentry{$Spark$ cluster}
 \end{axis}
 \end{tikzpicture}
-\caption{Graph of testing on 5 workers node by each node has CPU 2 cores and memory 8 GB}
+\caption{Graph of testing on 5 worker nodes by each node has CPU 2 cores and memory 8 GB}
 \end{figure}
-From Fig 1, we can analyze that the intersection point between Hadoop cluster line and Spark cluster line at the size of dataset is  319.51 MB and the execution time is 1074.05 seconds
+From Fig 1, we can analyze that the intersection point between Hadoop cluster line and Spark cluster line at the size of dataset is  319.51 MB and the execution time is 1074.05 seconds. As the result, we can execute parallel collaborative filtering on Hadoop cluster faster than Spark cluster when the size of input data is less than 319.51 MB by 5 worker nodes by each node has CPU 2 cores and memory 8 gb.
 
 \begin{figure}[H]
 \begin{tikzpicture}
@@ -192,14 +192,14 @@ From Fig 1, we can analyze that the intersection point between Hadoop cluster li
 %\addplot table [y=$Spark$, x=Size]{latex_data/HS_C2.dat};
 \addplot[color=red,solid,thick,mark=*, mark options={fill=white}] 
     coordinates {
-         (139.90, 813.04)
+         (139.90, 859.70)
          (279.80, 907.73)
          (419.71, 959.61)
          (559.61, 1154.24)
          (699.51, 1208.77)
          (839.42, 1338.82)
     }; 
-\node [below] at (axis cs:  139.90, 813.04) {$813.04$};
+\node [below] at (axis cs:  139.90, 859.70) {$859.70$};
 \node [above] at (axis cs:  279.80, 907.73) {$907.73$};
 \node [above] at (axis cs: 419.71, 959.61) {$959.61$};
 \node [right] at (axis cs: 559.61, 1042.10) {$1042.10$};
@@ -208,9 +208,9 @@ From Fig 1, we can analyze that the intersection point between Hadoop cluster li
 \addlegendentry{$Spark$ cluster}
 \end{axis}
 \end{tikzpicture}
-\caption{Graph of testing on 5 workers node by each node has CPU 4 cores and memory 8 GB}
+\caption{Graph of testing on 5 worker nodes by each node has CPU 4 cores and memory 8 GB}
 \end{figure}
-From Fig 2, we can analyze that the intersection point between Hadoop cluster line and Spark cluster line at the size of dataset is 462.38 MB and the execution time is 990.78 seconds
+From Fig 2, we can analyze that the intersection point between Hadoop cluster line and Spark cluster line at the size of dataset is 462.38 MB and the execution time is 990.78 seconds. As the result, we can execute parallel collaborative filtering on Hadoop cluster faster than Spark cluster when the size of input data is less than 462.38 MB by 5 worker nodes by each node has CPU 4 cores and memory 8 gb.
 
 \begin{figure}[H]
 \begin{tikzpicture}
@@ -256,9 +256,9 @@ From Fig 2, we can analyze that the intersection point between Hadoop cluster li
 \addlegendentry{$Spark$ cluster}
 \end{axis}
 \end{tikzpicture}
-\caption{Graph of testing on 5 workers node by each node has CPU 8 cores and memory 8 GB}
+\caption{Graph of testing on 5 worker nodes by each node has CPU 8 cores and memory 8 GB}
 \end{figure}
-From Fig 3, we can analyze that the intersection point between Hadoop cluster line and Spark cluster line at the size of dataset is 691.07 MB and the execution time is 902.86 seconds
+From Fig 3, we can analyze that the intersection point between Hadoop cluster line and Spark cluster line at the size of dataset is 691.07 MB and the execution time is 902.86 seconds. As the result, we can execute parallel collaborative filtering on Hadoop cluster faster than Spark cluster when the size of input data is less than 691.07 MB by 5 worker nodes by each node has CPU 8 cores and memory 8 gb.
 
 \begin{figure}[H]
 \begin{tikzpicture}
@@ -304,26 +304,263 @@ From Fig 3, we can analyze that the intersection point between Hadoop cluster li
 \addlegendentry{$Spark$ cluster}
 \end{axis}
 \end{tikzpicture}
-\caption{Graph of testing on 5 workers node by each node has CPU 16 cores and memory 8 GB}
+\caption{Graph of testing on 5 worker nodes by each node has CPU 16 cores and memory 8 GB}
 \end{figure}
-From Fig 4, we can analyze that the intersection point between Hadoop cluster line and Spark cluster line at the size of dataset is 759.62 MB and the execution time is 740.75 seconds
+From Fig 4, we can analyze that the intersection point between Hadoop cluster line and Spark cluster line at the size of dataset is 759.62 MB and the execution time is 740.75 seconds. As the result, we can execute parallel collaborative filtering on Hadoop cluster faster than Spark cluster when the size of input data is less than 759.62 MB by 5 worker nodes by each node has CPU 16 cores and memory 8 gb.
 
 \begin{table}[h]
 \centering
-\caption{The intersection point of each configuration that observe parallel computing }
+\caption{The gradient of cluster line by each configuration that observe parallel computing }
 \label{my-label}
 \begin{tabular}{|c|c|c|}
 \hline
-\multirow{2}{*}{The configuration in cluster} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Size of dataset\\ ( MB )\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Execution time\\ ( seconds )\end{tabular}} \\
+\multirow{2}{*}{The configuration in cluster} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Hadoop\\cluster\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Spark\\cluster\end{tabular}} \\
  &  &  \\ \hline
-\begin{tabular}[c]{@{}c@{}}5 worker nodes by each node \\ has CPU 2 cores and memory 8 gb\end{tabular} & 319.51 & 1074.05 \\ \hline
-\begin{tabular}[c]{@{}c@{}}5 worker nodes by each node\\ has CPU 4 cores and memory 8 gb\end{tabular} & 462.38 & 990.78 \\ \hline
-\begin{tabular}[c]{@{}c@{}}5 worker nodes by each node \\ has CPU 8 cores and memory 8 gb\end{tabular} & 691.07 & 902.86 \\ \hline
-\begin{tabular}[c]{@{}c@{}}5 worker nodes by each node\\ has CPU 16 cores and memory 8 gb\end{tabular} & 759.62 & 740.75 \\ \hline
+\begin{tabular}[c]{@{}c@{}}5 worker nodes by each node \\ has CPU 2 cores and memory 8 gb\end{tabular} & 3.27 & 0.46 \\ \hline
+\begin{tabular}[c]{@{}c@{}}5 worker nodes by each node\\ has CPU 4 cores and memory 8 gb\end{tabular} & 2.25 & 0.48 \\ \hline
+\begin{tabular}[c]{@{}c@{}}5 worker nodes by each node \\ has CPU 8 cores and memory 8 gb\end{tabular} & 1.31 & 0.54 \\ \hline
+\begin{tabular}[c]{@{}c@{}}5 worker nodes by each node\\ has CPU 16 cores and memory 8 gb\end{tabular} & 0.94 & 0.56 \\ \hline
 \end{tabular}
 \end{table}
-When we increase the number of CPU cores per each worker node in cluster,  the intersection point between Hadoop line and Spark line will cross at the higher size of dataset and the lower execution time 
 
+After execute the multiple linear regression algorithm as the equation (1), we discover that the coefficient of size of dataset is 0.5056 on Spark cluster and 1.938 on Hadoop cluster, the coefficient of the number of CPU cores per each worker node is -38.5424 on Spark cluster and -70.894 on Hadoop cluster, the interception is 927.1458 on Spark cluster and 537.263 on Hadoop cluster.
+
+\indent Second section is the experimental result of executing parallel collaborative filtering using alternating least square algorithm with Spark ML library on Spark cluster and Mahout on Hadoop cluster by changing the number of worker in the cluster nodes which has the total number of CPU cores is 20 cores and the total number of memory is 40 GB for observe the impact from parallel I/O on the performance.
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}[
+	xlabel=Size of dataset ( MB ),
+	ylabel=TIme ( seconds ), 
+	xtick={139.90, 279.80, 419.71, 559.61, 699.51, 839.42},
+	grid=both, 
+	legend pos=north west]
+\addplot[color=blue,solid,thick,mark=*, mark options={fill=white}] 
+    coordinates {
+         (139.90, 254.23)
+         (279.80, 593.71)
+         (419.71, 906.54)
+         (559.61, 1253.17)
+         (699.51, 1468.55)
+         (839.42, 1831.36)
+    }; 
+\node [below] at (axis cs:  139.90, 254.23) {$254.23$};
+\node [right] at (axis cs:  279.80, 593.71) {$593.71$};
+\node [right] at (axis cs: 419.71, 906.54) {$906.54$};
+\node [left] at (axis cs: 559.61, 1253.17) {$1253.17$};
+\node [left] at (axis cs: 699.51, 1468.55) {$1468.55$};
+\node [left] at (axis cs: 839.42, 1831.36) {$1831.36$};
+\addlegendentry{$Hadoop$  cluster}
+\addplot[color=red,solid,thick,mark=*, mark options={fill=white}] 
+    coordinates {
+         (139.90, 859.70)
+         (279.80, 907.73)
+         (419.71, 959.61)
+         (559.61, 1154.24)
+         (699.51, 1208.77)
+         (839.42, 1338.82)
+    }; 
+\node [below] at (axis cs:  139.90, 859.70) {$859.70$};
+\node [above] at (axis cs:  279.80, 907.73) {$907.73$};
+\node [above] at (axis cs: 419.71, 959.61) {$959.61$};
+\node [right] at (axis cs: 559.61, 1042.10) {$1042.10$};
+\node [right] at (axis cs: 699.51, 1112.97) {$1112.97$};
+\node [above] at (axis cs: 839.42,1196.68) {$1196.68$};
+\addlegendentry{$Spark$ cluster}
+\end{axis}
+\end{tikzpicture}
+\caption{Graph of testing on 5 worker nodes by each node has CPU 4 cores and memory 8 GB}
+\end{figure}
+From Fig 5, we can analyze that the intersection point between Hadoop cluster line and Spark cluster line at the size of dataset is 462.38 MB and the execution time is 990.78 seconds. As the result, we can execute parallel collaborative filtering on Hadoop cluster faster than Spark cluster when the size of input data is less than 462.38 MB by 5 worker nodes by each node has CPU 4 cores and memory 8 gb.
+
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}[
+	xlabel=Size of dataset ( MB ),
+	ylabel=TIme ( seconds ), 
+	xtick={139.90, 279.80, 419.71, 559.61, 699.51, 839.42},
+	grid=both, 
+	legend pos=north west]
+\addplot[color=blue,solid,thick,mark=*, mark options={fill=white}] 
+    coordinates {
+         (139.90, 224.59)
+         (279.80, 504.72)
+         (419.71, 828.13)
+         (559.61, 1083.10)
+         (699.51, 1441.27)
+         (839.42, 1724.50)
+    }; 
+\node [below] at (axis cs:  139.90, 224.59) {$224.59$};
+\node [right] at (axis cs:  279.80, 504.72) {$504.72$};
+\node [right] at (axis cs: 419.71, 828.13) {$828.13$};
+\node [left] at (axis cs: 559.61, 1083.10) {$1083.10$};
+\node [left] at (axis cs: 699.51, 1441.27) {$1441.27$};
+\node [left] at (axis cs: 839.42, 1724.50) {$1724.50$};
+\addlegendentry{$Hadoop$  cluster}
+\addplot[color=red,solid,thick,mark=*, mark options={fill=white}] 
+    coordinates {
+         (139.90, 756.19)
+         (279.80, 841.94)
+         (419.71, 907.18)
+         (559.61, 968.92)
+         (699.51, 1033.82)
+         (839.42, 1081.29)
+    }; 
+\node [below] at (axis cs:  139.90, 756.19) {$756.19$};
+\node [above] at (axis cs:  279.80, 841.94) {$841.94$};
+\node [above] at (axis cs: 419.71, 907.18) {$907.18$};
+\node [right] at (axis cs: 559.61, 968.92) {$968.92$};
+\node [right] at (axis cs: 699.51, 1033.82) {$1033.82$};
+\node [above] at (axis cs: 839.42,1081.29) {$1081.29$};
+\addlegendentry{$Spark$ cluster}
+\end{axis}
+\end{tikzpicture}
+\caption{Graph of testing on 4 worker nodes by each node has CPU 5 cores and memory 10 GB}
+\end{figure}
+From Fig 6, we can analyze that the intersection point between Hadoop cluster line and Spark cluster line at the size of dataset is 468.33 MB and the execution time is 921.70 seconds. As the result, we can execute parallel collaborative filtering on Hadoop cluster faster than Spark cluster when the size of input data is less than 468.33 MB by 4 worker nodes by each node has CPU 5 cores and memory 10 gb.
+
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}[
+	xlabel=Size of dataset ( MB ),
+	ylabel=TIme ( seconds ), 
+	xtick={139.90, 279.80, 419.71, 559.61, 699.51, 839.42},
+	grid=both, 
+	legend pos=north west]
+\addplot[color=blue,solid,thick,mark=*, mark options={fill=white}] 
+    coordinates {
+         (139.90, 202.19)
+         (279.80, 473.55)
+         (419.71, 727.21)
+         (559.61, 927.78)
+         (699.51, 1257.95)
+         (839.42, 1571.32)
+    }; 
+\node [below] at (axis cs:  139.90, 202.19) {$202.19$};
+\node [right] at (axis cs:  279.80, 473.55) {$473.55$};
+\node [right] at (axis cs: 419.71, 727.21) {$727.21$};
+\node [left] at (axis cs: 559.61, 927.78) {$927.78$};
+\node [left] at (axis cs: 699.51, 1257.95) {$1257.95$};
+\node [left] at (axis cs: 839.42, 1571.32) {$1571.32$};
+\addlegendentry{$Hadoop$  cluster}
+\addplot[color=red,solid,thick,mark=*, mark options={fill=white}] 
+    coordinates {
+         (139.90, 699.15)
+         (279.80, 769.21)
+         (419.71, 805.36)
+         (559.61, 842.45)
+         (699.51, 907.80)
+         (839.42, 954.81)
+    }; 
+\node [below] at (axis cs:  139.90, 699.15) {$699.15$};
+\node [above] at (axis cs:  279.80, 769.21) {$769.21$};
+\node [above] at (axis cs: 419.71, 805.36) {$805.36$};
+\node [right] at (axis cs: 559.61, 842.45) {$842.45$};
+\node [right] at (axis cs: 699.51, 907.80) {$907.80$};
+\node [above] at (axis cs: 839.42, 954.81) {$954.81$};
+\addlegendentry{$Spark$ cluster}
+\end{axis}
+\end{tikzpicture}
+\caption{Graph of testing on 4 worker nodes by each node has CPU 5 cores and memory 10 GB}
+\end{figure}
+From Fig 7, we can analyze that the intersection point between Hadoop cluster line and Spark cluster line at the size of dataset is 470.37 MB and the execution time is 822.98 seconds. As the result, we can execute parallel collaborative filtering on Hadoop cluster faster than Spark cluster when the size of input data is less than 470.37  MB by 2 worker nodes by each node has CPU 10 cores and memory 20 gb.
+
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}[
+	xlabel=Size of dataset ( MB ),
+	ylabel=TIme ( seconds ), 
+	xtick={139.90, 279.80, 419.71, 559.61, 699.51, 839.42},
+	grid=both, 
+	legend pos=north west]
+\addplot[color=blue,solid,thick,mark=*, mark options={fill=white}] 
+    coordinates {
+         (139.90, 173.45)
+         (279.80, 446.65)
+         (419.71, 663.96)
+         (559.61, 898.30)
+         (699.51, 1154.64)
+         (839.42, 1498.75)
+    }; 
+\node [below] at (axis cs:  139.90, 173.45) {$173.45$};
+\node [right] at (axis cs:  279.80, 446.65) {$446.65$};
+\node [right] at (axis cs: 419.71, 663.96) {$663.96$};
+\node [left] at (axis cs: 559.61, 898.30) {$898.30$};
+\node [left] at (axis cs: 699.51, 1154.64) {$1154.64$};
+\node [left] at (axis cs: 839.42, 1498.75) {$1498.75$};
+\addlegendentry{$Hadoop$  cluster}
+\addplot[color=red,solid,thick,mark=*, mark options={fill=white}] 
+    coordinates {
+         (139.90, 674.95)
+         (279.80, 721.38)
+         (419.71, 759.26)
+         (559.61, 796.20)
+         (699.51, 829.71)
+         (839.42, 893.00)
+    }; 
+\node [below] at (axis cs:  139.90, 674.95) {$674.95$};
+\node [above] at (axis cs:  279.80, 721.38) {$721.38$};
+\node [above] at (axis cs: 419.71, 759.26) {$759.26$};
+\node [right] at (axis cs: 559.61, 796.20) {$796.20$};
+\node [right] at (axis cs: 699.51, 829.71) {$829.71$};
+\node [above] at (axis cs: 839.42, 893.00) {$893.00$};
+\addlegendentry{$Spark$ cluster}
+\end{axis}
+\end{tikzpicture}
+\caption{Graph of testing on 4 worker nodes by each node has CPU 5 cores and memory 10 GB}
+\end{figure}
+From Fig 8, we can analyze that the intersection point between Hadoop cluster line and Spark cluster line at the size of dataset is 472.19 MB and the execution time is 773.9 seconds. As the result, we can execute parallel collaborative filtering on Hadoop cluster faster than Spark cluster when the size of input data is less than 472.19  MB by 1 worker node which has CPU 20 cores and memory 40 gb.\\
+
+\begin{table}[h]
+\centering
+\caption{The gradient of cluster line by each configuration that observe parallel I/O }
+\label{my-label}
+\begin{tabular}{|c|c|c|}
+\hline
+\multirow{2}{*}{The configuration in cluster} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Hadoop\\ cluster\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Spark\\ cluster\end{tabular}} \\
+ &  &  \\ \hline
+\begin{tabular}[c]{@{}c@{}}5 worker nodes by each node \\ has CPU 4 cores and memory 8 gb\end{tabular} & 2.25 & 0.48 \\ \hline
+\begin{tabular}[c]{@{}c@{}}4 worker nodes by each node\\ has CPU 5 cores and memory 10 gb\end{tabular} & 2.14 & 0.46 \\ \hline
+\begin{tabular}[c]{@{}c@{}}2 worker nodes by each node \\ has CPU 10 cores and memory 20 gb\end{tabular} & 1.96 & 0.37 \\ \hline
+\begin{tabular}[c]{@{}c@{}}1 worker node which \\ has CPU 20 cores and memory 40 gb\end{tabular} & 1.89 & 0.31 \\ \hline
+\end{tabular}
+\end{table} 
+
+\indent After execute the multiple linear regression algorithm as the equation (2), we discover that the coefficient of size of dataset is 0.3997 on Spark cluster and 2.032 on Hadoop cluster, the coefficient of the number of worker nodes is 56.9851 on Spark cluster and 59.832 on Hadoop cluster, the interception is 521.7023 on Spark cluster and -253.391 on Hadoop cluster.
+
+\begin{table}[h]
+\centering
+\caption{The value of coefficient in Multiple Linear Regression}
+\label{my-label}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+The kind of cluster & \begin{math}\alpha_{1}\end{math} & \begin{math}\alpha_{2}\end{math} & \begin{math}\beta_{1}\end{math} & \begin{math}\beta_{2}\end{math} & \begin{math}\beta_{3}\end{math} & \begin{math}\beta{4}\end{math} \\ \hline
+Hadoop cluster & 537.26 & -253.39 & -70.89 & 1.94 & 59.83 & 2.03 \\ \hline
+Spark cluster & 927.15 & 521.70 & -38.54 & 0.51 & 56.99 & 0.40 \\ \hline
+\end{tabular}
+\end{table}
+The Multiple Linear Regression (MLR) equation
+
+\begin{itemize}
+\item{Spark cluster : }
+\begin{equation} \tag{3.1}
+	t = 927.15 - 38.54c + 0.51d
+\end{equation}
+\begin{equation} \tag{4.1}
+	t = 521.70 + 56.99n + 0.40d 
+\end{equation}
+\item{Hadoop cluster : }
+\begin{equation} \tag{3.2}
+	t = 537.26 - 70.89c + 1.94d
+\end{equation}
+\begin{equation} \tag{4.2}
+	t = -253.39 + 59.83n + 2.03d 
+\end{equation}
+\end{itemize}
+
+\section{Discussion}
+The purpose of this research was to find the suitable configuration of Spark cluster and Hadoop cluster to execute parallel collaborative filtering technique for create recommendation system and discover the impact from parallel computing and parallel I/O on the performance.\\
+\indent To observe the parallel computing impact on performance by changing the number of CPU cores per each worker node with fix the size of memory.\\
+\indent To observe the parallel I/O impact on performance by changing the number of worker nodes with the same total number of CPU cores and size of memory.
 
 \section{Conclusion}
 
@@ -333,62 +570,8 @@ When we increase the number of CPU cores per each worker node in cluster,  the i
 
 
 
-% if have a single appendix:
-%\appendix[Proof of the Zonklar Equations]
-% or
-%\appendix  % for no appendix heading
-% do not use \section anymore after \appendix, only \section*
-% is possibly needed
-
-% use appendices with more than one appendix
-% then use \section to start each appendix
-% you must declare a \section before using any
-% \subsection or using \label (\appendices by itself
-% starts a section numbered zero.)
-%
 
 
-\appendices
-\section{Proof of the First Zonklar Equation}
-\blindtext
-
-% use section* for acknowledgement
-\section*{Acknowledgment}
-
-
-The authors would like to thank...
-
-
-% Can use something like this to put references on a page
-% by themselves when using endfloat and the captionsoff option.
-\ifCLASSOPTIONcaptionsoff
-  \newpage
-\fi
-
-
-
-% trigger a \newpage just before the given reference
-% number - used to balance the columns on the last page
-% adjust value as needed - may need to be readjusted if
-% the document is modified later
-%\IEEEtriggeratref{8}
-% The "triggered" command can be changed if desired:
-%\IEEEtriggercmd{\enlargethispage{-5in}}
-
-% references section
-
-% can use a bibliography generated by BibTeX as a .bbl file
-% BibTeX documentation can be easily obtained at:
-% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
-% The IEEEtran BibTeX style support page is at:
-% http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
-% argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
-%
-% <OR> manually copy in the resultant .bbl file
-% set second argument of \begin to the number of references
-% (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
 
 \bibitem{IEEEhowto:kopka}
@@ -397,37 +580,11 @@ H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
 
 \end{thebibliography}
 
-% biography section
-% 
-% If you have an EPS/PDF photo (graphicx package needed) extra braces are
-% needed around the contents of the optional argument to biography to prevent
-% the LaTeX parser from getting confused when it sees the complicated
-% \includegraphics command within an optional argument. (You could create
-% your own custom macro containing the \includegraphics command to make things
-% simpler here.)
-%\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
-% or if you just want to reserve a space for a photo:
-
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{picture}}]{John Doe}
 \blindtext
 \end{IEEEbiography}
 
-% You can push biographies down or up by placing
-% a \vfill before or after them. The appropriate
-% use of \vfill depends on what kind of text is
-% on the last page and whether or not the columns
-% are being equalized.
 
-%\vfill
-
-% Can be used to pull up biographies so that the bottom of the last one
-% is flush with the other column.
-%\enlargethispage{-5in}
-
-
-
-
-% that's all folks
 \end{document}
 
 

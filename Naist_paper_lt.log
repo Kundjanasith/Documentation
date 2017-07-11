@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  11 JUL 2017 12:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  11 JUL 2017 18:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -704,7 +704,14 @@ Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \extratabsurround=\skip52
 \backup@length=\skip53
 ))
-(./Naist_paper_lt.aux)
+(./Naist_paper_lt.aux
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+)
 \openout1 = `Naist_paper_lt.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
@@ -809,17 +816,33 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 76.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [2]
-Underfull \vbox (badness 1838) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1314) has occurred while \output is active []
 
  [3]
-Overfull \hbox (4.11868pt too wide) in paragraph at lines 315--324
+Underfull \vbox (badness 4242) has occurred while \output is active []
+
+
+Underfull \vbox (badness 1314) has occurred while \output is active []
+
+ [4]
+Underfull \hbox (badness 1675) in paragraph at lines 511--512
+\OT1/ptm/m/n/10 be-tween Hadoop clus-ter line and Spark clus-ter line at
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (11.58353pt too wide) in paragraph at lines 534--540
  [][] 
  []
 
-** WARNING: \IEEEbiography is locked out when in conference mode (line 411).
+** WARNING: \IEEEbiography is locked out when in conference mode (line 583).
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -831,28 +854,36 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4] (./Naist_paper_lt.aux) ) 
+[5] (./Naist_paper_lt.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 24200 strings out of 492995
- 625499 string characters out of 6132704
- 828155 words of memory out of 5000000
- 27316 multiletter control sequences out of 15000+600000
+ 24284 strings out of 492995
+ 627134 string characters out of 6132704
+ 832113 words of memory out of 5000000
+ 27400 multiletter control sequences out of 15000+600000
  44270 words of font info for 93 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 69i,19n,107p,1126b,2236s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips
-/base/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7
-.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr
-/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Naist_paper_lt.pdf (4 pages, 112429 bytes).
+ 69i,20n,107p,1126b,2236s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
+e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf
+-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/font
+s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/u
+rw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/u
+tmri8a.pfb>
+Output written on Naist_paper_lt.pdf (5 pages, 153079 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 38 compressed objects within 1 object stream
+ 72 PDF objects out of 1000 (max. 8388607)
+ 52 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
